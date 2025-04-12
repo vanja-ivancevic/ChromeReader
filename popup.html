@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Venice TTS Settings</title>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: sans-serif; width: 300px; padding: 10px; }
+        label { display: block; margin-top: 10px; margin-bottom: 3px; font-weight: bold;}
+        input[type="password"], input[type="text"], select { width: 95%; padding: 5px; margin-bottom: 10px; }
+        .slider-container { display: flex; align-items: center; margin-bottom: 10px; }
+        input[type="range"] { flex-grow: 1; margin-right: 10px;}
+        #speedValue { font-weight: bold; min-width: 40px; text-align: right; }
+        button { padding: 8px 15px; cursor: pointer; }
+        #status { margin-top: 10px; color: green; font-size: 0.9em; height: 1em; }
+    </style>
+</head>
+<body>
+    <h3>Venice TTS Settings</h3>
+
+    <!-- API Key input removed -->
+
+    <label for="voice">Voice:</label>
+    <select id="voice">
+        <!-- Options will be populated by JS -->
+        <option value="">Loading voices...</option>
+    </select>
+
+    <label for="speed">Reading Speed:</label>
+    <div class="slider-container">
+        <input type="range" id="speed" min="0" max="6" step="1" value="0">
+        <span id="speedValue">1.00x</span>
+    </div>
+
+    <button id="saveButton">Save Settings</button>
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
