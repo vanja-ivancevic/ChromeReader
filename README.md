@@ -41,6 +41,8 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
     *   **Read Selection:** Highlight text on a web page, right-click the selection, and choose "Start Reading Selection".
     *   **Control Playback:** Use the floating UI controller that appears (usually bottom-right) to play/pause and adjust reading speed.
 
+<img width="191" alt="Screenshot 2025-04-13 at 15 40 48" src="https://github.com/user-attachments/assets/30004ed6-df0a-4f8d-a257-7a979f1f18bb" />
+
 <img width="173" alt="image" src="https://github.com/user-attachments/assets/04bbcff5-6af9-481c-b637-dc76152f9c7b" />
 
 ## License
