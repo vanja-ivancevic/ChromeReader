@@ -8,7 +8,7 @@ Read web pages and selected text aloud using high-quality AI voices from Venice 
 *   **Voice Selection:** Choose from various high-quality voices.
 *   **Speed Control:** Adjust the reading speed (1.0x to 2.0x).
 *   **Voice Preview:** Sample voices directly in the settings popup.
-*   **Simple UI:** An unobtrusive controller appears on the page during reading.
+*   **Simple UI:** An unobtrusive controller appears on the bottom of the page during reading.
 
 ## Installation (Manual)
 
