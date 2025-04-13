@@ -1,6 +1,6 @@
-# Kokoro Text-to-Speech Chrome Extension
+# My Little Chrome Reader Extension
 
-Read web pages and selected text aloud using high-quality AI voices from Venice AI's Kokoro model.
+Read web pages and selected text aloud using high-quality AI voices from Venice AI's Kokoro Text-to-Speech model.
 
 ## Features
 
