@@ -25,9 +25,7 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
 ## Getting Started
 
 1.  **API Key:** This extension requires an API key from Venice AI to function.
-    *   Visit [Venice.ai](https://venice.ai/) and sign up or log in.
-    *   Navigate to your API key settings (the exact location might vary, look for "API Keys" or similar in your account settings).
-    *   Generate a new API key if you don't have one.
+    *   Visit [Venice.ai/venice-api/](https://venice.ai/venice-api/) to get an API key.
     *   **Copy** the generated API key.
 2.  **Configure Extension:**
     *   Click the Kokoro Text-to-Speech extension icon in your Chrome toolbar (it might be hidden under the puzzle piece icon).
