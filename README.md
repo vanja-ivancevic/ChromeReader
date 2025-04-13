@@ -15,11 +15,11 @@ Read web pages and selected text aloud using high-quality AI voices from Venice 
 Since this extension is not yet on the Chrome Web Store, you need to install it manually:
 
 1.  **Download:** Download the extension files from the latest [release](https://github.com/vanja-ivancevic/My-Little-Chrome-Reader/releases) from GitHub. Alternatively, you can clone or download the repository as a zip file.
-2.  **Unzip:** If you downloaded a ZIP file, unzip it to a permanent location on your computer (e.g., a folder named `kokoro-tts-extension`).
+2.  **Unzip:** Unzip it to a permanent location on your computer.
 3.  **Open Chrome Extensions:** Open Google Chrome, type `chrome://extensions` in the address bar, and press Enter.
 4.  **Enable Developer Mode:** In the top-right corner of the Extensions page, toggle the "Developer mode" switch ON.
 5.  **Load Unpacked:** Click the "Load unpacked" button that appears.
-6.  **Select Folder:** Navigate to the folder where you unzipped or cloned the extension files (e.g., the `kokoro-tts-extension` folder) and click "Select Folder".
+6.  **Select Folder:** Navigate to the folder where you unzipped or cloned the extension folder and click "Select Folder".
 7.  **Installed:** The Kokoro Text-to-Speech extension should now appear in your list of extensions and be ready to use.
 
 ## Getting Started
@@ -32,6 +32,7 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
     *   Paste your copied Venice AI API key into the "API Key" field.
     *   Select your preferred voice using the dropdown menu. You can click the small play button next to the dropdown to preview the selected voice.
     *   Changes are saved automatically.
+    *   You may have to reload the extension or restart Chrome after changing the API key, if it's not working.
 3.  **Usage:**
     *   **Read Page:** Right-click anywhere on a web page and select "Read this page" from the context menu.
     *   **Read Selection:** Highlight text on a web page, right-click the selection, and choose "Start Reading Selection".
