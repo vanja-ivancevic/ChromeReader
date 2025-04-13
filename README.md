@@ -50,6 +50,3 @@ If you find this extension useful, consider supporting its development:
 *   **PayPal:** [vanja.ivancevic@gmail.com](mailto:vanja.ivancevic@gmail.com)
 *   **Check out my other work:** [www.vanja-ivancevic.com](https://www.vanja-ivancevic.com)
 
----
-
-*Note: Ensure you comply with Venice AI's terms of service when using their API.*
