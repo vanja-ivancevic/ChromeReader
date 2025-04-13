@@ -20,7 +20,7 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
 4.  **Enable Developer Mode:** In the top-right corner of the Extensions page, toggle the "Developer mode" switch ON.
 5.  **Load Unpacked:** Click the "Load unpacked" button that appears.
 6.  **Select Folder:** Navigate to the folder where you unzipped or cloned the extension folder and click "Select Folder".
-7.  **Installed:** The Kokoro Text-to-Speech extension should now appear in your list of extensions and be ready to use.
+7.  **Installed:** The "My Little Chrome Reader" extension should now appear in your list of extensions and be ready to use.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
 <img width="330" alt="image" src="https://github.com/user-attachments/assets/acf2dc4b-b6c8-4530-853d-fabe28ae4568" />
 
 2.  **Configure Extension:**
-    *   Click the Kokoro Text-to-Speech extension icon in your Chrome toolbar (it might be hidden under the puzzle piece icon).
+    *   Click the "My Little Chrome Reader" extension icon in your Chrome toolbar (it might be hidden under the puzzle piece icon).
     *   Paste your copied Venice AI API key into the "API Key" field.
     *   Select your preferred voice using the dropdown menu. You can click the small play button next to the dropdown to preview the selected voice.
     *   Changes are saved automatically.
