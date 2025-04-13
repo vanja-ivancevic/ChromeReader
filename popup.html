@@ -1,39 +1,242 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Venice TTS Settings</title>
+    <title>Kokoro Text-to-Speech</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; width: 300px; padding: 10px; }
-        label { display: block; margin-top: 10px; margin-bottom: 3px; font-weight: bold;}
-        input[type="password"], input[type="text"], select { width: 95%; padding: 5px; margin-bottom: 10px; }
-        .slider-container { display: flex; align-items: center; margin-bottom: 10px; }
-        input[type="range"] { flex-grow: 1; margin-right: 10px;}
-        #speedValue { font-weight: bold; min-width: 40px; text-align: right; }
-        button { padding: 8px 15px; cursor: pointer; }
-        #status { margin-top: 10px; color: green; font-size: 0.9em; height: 1em; }
+        :root {
+            /* Color Palette */
+            --primary-color: #4169E1; /* royalblue */
+            --on-primary-color: #FFFFFF;
+            --surface-container-low-color: #F8F9FF;
+            --surface-color: #FEFBFF;
+            --on-surface-color: #1A1C1E;
+            --on-surface-variant-color: #44474F;
+            --outline-color: #74777F;
+            --outline-variant-color: #C4C6CF;
+            --error-color: #B3261E;
+
+            /* Dimensions & Typography */
+            --base-font-size: 14px;
+            --body-line-height: 1.4;
+            --control-height: 48px;
+            --border-radius: 4px;
+            --preview-button-size: 30px;
+            --preview-spinner-size: 16px;
+            --preview-icon-height: 10px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            min-width: 320px;
+            padding: 16px;
+            background-color: var(--surface-container-low-color);
+            color: var(--on-surface-color);
+            box-sizing: border-box;
+            font-size: var(--base-font-size);
+            line-height: var(--body-line-height);
+        }
+
+        .settings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h3 {
+            font-size: 1.57rem;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+            line-height: 1.2;
+            color: var(--on-surface-color);
+        }
+
+        .setting-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label.control-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--on-surface-variant-color);
+            padding-left: 4px;
+        }
+
+        input[type="password"],
+        select {
+            width: 100%;
+            height: var(--control-height);
+            padding: 0 16px;
+            border: 1px solid var(--outline-color);
+            border-radius: var(--border-radius);
+            background-color: var(--surface-color);
+            color: var(--on-surface-color);
+            font-family: inherit;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        select {
+             background-image: url('data:image/svg+xml;utf8,<svg fill="%2344474F" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+             background-repeat: no-repeat;
+             background-position: right 12px center;
+             padding-right: 40px;
+        }
+
+        input[type="password"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 1px var(--primary-color);
+        }
+        input[type="password"]::placeholder {
+            color: var(--on-surface-variant-color);
+            opacity: 0.7;
+        }
+
+        .voice-selector-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .voice-selector-container select {
+            flex-grow: 1;
+        }
+
+        /* --- Preview Button Enhanced Styles --- */
+        button#previewVoiceButton {
+            flex-shrink: 0;
+            width: var(--preview-button-size);
+            height: var(--preview-button-size);
+            padding: 0;
+            margin: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
+            cursor: pointer;
+            display: flex; /* Use flex for centering content */
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.15s ease-in-out, transform 0.1s ease-out, opacity 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        button#previewVoiceButton:hover:not(:disabled) {
+            background-color: #3a5fcd;
+        }
+        button#previewVoiceButton:active:not(:disabled) {
+            transform: scale(0.92);
+        }
+        button#previewVoiceButton:disabled {
+            opacity: 0.5;
+            cursor: default;
+            background-color: var(--outline-variant-color);
+        }
+
+        /* Container for icons/spinner inside button */
+        .preview-icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Icons */
+        .play-icon, .pause-icon {
+            display: none; /* Hide by default */
+            background: transparent;
+            border: 0;
+            box-sizing: border-box;
+            width: 0;
+            height: var(--preview-icon-height);
+        }
+        .play-icon {
+             margin-left: 1px;
+             border-color: transparent transparent transparent var(--on-primary-color);
+             border-style: solid;
+             border-width: calc(var(--preview-icon-height) / 2) 0 calc(var(--preview-icon-height) / 2) 7px; /* Adjust width */
+        }
+        .pause-icon {
+             border-color: var(--on-primary-color);
+             border-style: double;
+             border-width: 0px 0 0px 7px; /* Adjust width */
+             margin-left: 0;
+        }
+
+        /* Spinner */
+        .preview-spinner {
+            display: none; /* Hide by default */
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Use on-primary with alpha */
+            border-top: 2px solid var(--on-primary-color);
+            border-radius: 50%;
+            width: var(--preview-spinner-size);
+            height: var(--preview-spinner-size);
+            animation: spin 1s linear infinite;
+            box-sizing: border-box;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        /* State Visibility Control */
+        button#previewVoiceButton .play-icon { display: block; } /* Default: Show Play */
+        button#previewVoiceButton .pause-icon { display: none; }
+        button#previewVoiceButton .preview-spinner { display: none; }
+
+        button#previewVoiceButton.loading .play-icon,
+        button#previewVoiceButton.loading .pause-icon { display: none; }
+        button#previewVoiceButton.loading .preview-spinner { display: block; }
+
+        button#previewVoiceButton.playing .play-icon,
+        button#previewVoiceButton.playing .preview-spinner { display: none; }
+        button#previewVoiceButton.playing .pause-icon { display: block; }
+
+
+        /* Hidden Audio Player */
+        audio#previewAudioPlayer {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
-    <h3>Venice TTS Settings</h3>
+    <div class="settings-container">
+        <h3>Kokoro Text-to-Speech</h3>
 
-    <!-- API Key input removed -->
+        <div class="setting-item api-key-setting">
+            <label class="control-label" for="apiKey">API Key</label>
+            <input type="password" id="apiKey" placeholder="Enter your Venice API Key" value=""> <!-- Removed default value -->
+        </div>
 
-    <label for="voice">Voice:</label>
-    <select id="voice">
-        <!-- Options will be populated by JS -->
-        <option value="">Loading voices...</option>
-    </select>
+        <div class="setting-item">
+            <label class="control-label" for="voiceSelect">Voice</label>
+            <div class="voice-selector-container">
+                <select id="voiceSelect">
+                    <option value="">Loading voices...</option>
+                </select>
+                <button id="previewVoiceButton" title="Preview Voice">
+                    <span class="preview-icon-container">
+                         <span class="play-icon"></span>
+                         <span class="pause-icon"></span>
+                         <span class="preview-spinner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
 
-    <label for="speed">Reading Speed:</label>
-    <div class="slider-container">
-        <input type="range" id="speed" min="0" max="6" step="1" value="0">
-        <span id="speedValue">1.00x</span>
     </div>
 
-    <button id="saveButton">Save Settings</button>
-    <div id="status"></div>
-
+    <audio id="previewAudioPlayer"></audio>
     <script src="popup.js"></script>
 </body>
 </html>
