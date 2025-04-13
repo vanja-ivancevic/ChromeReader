@@ -27,7 +27,9 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
 1.  **API Key:** This extension requires an API key from Venice AI to function.
     *   Visit [Venice.ai/venice-api/](https://venice.ai/venice-api/) to get an API key.
     *   **Copy** the generated API key.
+  
 <img width="330" alt="image" src="https://github.com/user-attachments/assets/acf2dc4b-b6c8-4530-853d-fabe28ae4568" />
+
 2.  **Configure Extension:**
     *   Click the Kokoro Text-to-Speech extension icon in your Chrome toolbar (it might be hidden under the puzzle piece icon).
     *   Paste your copied Venice AI API key into the "API Key" field.
@@ -38,7 +40,9 @@ Since this extension is not yet on the Chrome Web Store, you need to install it 
     *   **Read Page:** Right-click anywhere on a web page and select "Read this page" from the context menu.
     *   **Read Selection:** Highlight text on a web page, right-click the selection, and choose "Start Reading Selection".
     *   **Control Playback:** Use the floating UI controller that appears (usually bottom-right) to play/pause and adjust reading speed.
+
 <img width="173" alt="image" src="https://github.com/user-attachments/assets/04bbcff5-6af9-481c-b637-dc76152f9c7b" />
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details (You will need to create this file).
