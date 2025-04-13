@@ -14,7 +14,7 @@ Read web pages and selected text aloud using high-quality AI voices from Venice 
 
 Since this extension is not yet on the Chrome Web Store, you need to install it manually:
 
-1.  **Download:** Download the extension files from the latest [realease](https://github.com/vanja-ivancevic/ChromeReader/releases) from GitHub. Alternatively, you can clone or download the repository as a zip file.
+1.  **Download:** Download the extension files from the latest [release](https://github.com/vanja-ivancevic/My-Little-Chrome-Reader/releases) from GitHub. Alternatively, you can clone or download the repository as a zip file.
 2.  **Unzip:** If you downloaded a ZIP file, unzip it to a permanent location on your computer (e.g., a folder named `kokoro-tts-extension`).
 3.  **Open Chrome Extensions:** Open Google Chrome, type `chrome://extensions` in the address bar, and press Enter.
 4.  **Enable Developer Mode:** In the top-right corner of the Extensions page, toggle the "Developer mode" switch ON.
